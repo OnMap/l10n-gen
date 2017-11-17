@@ -10,5 +10,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Philip Kramer (philip@onmap.co.il)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "4.17.4",
+    "unzip2": "0.2.5",
+    "xml2js": "0.4.19"
+  }
 }
