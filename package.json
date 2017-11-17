@@ -7,7 +7,7 @@
     "l10ngen": "./index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --runInBand --forceExit --config ./internals/jest/jest.config.json"
   },
   "author": "Philip Kramer (philip@onmap.co.il)",
   "license": "MIT",
@@ -15,5 +15,8 @@
     "lodash": "4.17.4",
     "unzip2": "0.2.5",
     "xml2js": "0.4.19"
+  },
+  "devDependencies": {
+    "jest-cli": "^21.2.1"
   }
 }
