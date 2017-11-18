@@ -7,7 +7,7 @@ function getMockConfigParts(config) {
   const apiPort = getFreePort();
   const connectionString = changeDatabaseName(config.connectionString);
 
-  // console.log('Mocked config vars for test concurrency:', { appName, apiPort, connectionString });
+  // console.log('Mocked config vars for tests concurrency:', { appName, apiPort, connectionString });
 
   return {
     apiPort,

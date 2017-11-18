@@ -12,7 +12,7 @@ const dropAllMockDbs = () => new Promise((resolve, reject) =>
     if (err) {
       return reject(err);
     }
-    console.log('Starting test database cleanup...');
+    console.log('Starting tests database cleanup...');
     return db.admin().listDatabases()
       .then(dbs => dbs.databases.filter(({ name }) => name.indexOf(MOCK_DB_PREFIX) === 0))
       .then(mockDatabases => Promise.all(mockDatabases
@@ -43,5 +43,5 @@ const dropAllMockDbs = () => new Promise((resolve, reject) =>
 
 dropAllMockDbs()
   .catch(err => console.error(err))
-  .then(() => console.log('✅ Cleaned up test databases.'))
+  .then(() => console.log('✅ Cleaned up tests databases.'))
   .then(() => process.exit(0));
