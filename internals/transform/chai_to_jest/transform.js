@@ -295,28 +295,13 @@ const transform = (ast, j) => {
      d.value.callee.property = j.identifier('toThrow');
      d.value.arguments = args.slice(1);
    });
-
-  // assert.isString(A) -> expect(typeof A).toBe('string')
-  ast
-    .find(j.CallExpression, { callee: j.MemberExpression })
-    .filter(d => d.value.arguments.length > 0)
-    .filter(d => d.value.callee.object)
-    .filter(d => d.value.callee.object.name === 'assert')
-    .filter(d => d.value.callee.property.name === 'isString')
-    // .forEach(d => console.log(d))
-    .forEach(d => {
-      const args = d.value.arguments;
-      const typeofExp = j.unaryExpression('typeof', args[0]);
-      const callExp = j.callExpression(
-          j.identifier('expect'),
-          [typeofExp]
-        );
-      d.value.callee.object = callExp;
-      d.value.callee.property = j.identifier('toBe');
-      d.value.arguments = ["'string'", ...args.slice(1)];
-    });
 };
 
+// TODO: Replace 44 other usages of assert
 // isNumber -> .toBeInstanceOf(Number);
+// isString
+// isAtMost
+// isAtLeast
+// hasAllKeys
 
 module.exports = transform;

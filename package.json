@@ -19,6 +19,6 @@
     "xml2js": "0.4.19"
   },
   "devDependencies": {
-    "jest-cli": "^21.2.1"
+    "jest-cli": "21.2.1"
   }
 }
