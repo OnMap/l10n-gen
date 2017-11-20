@@ -12,6 +12,7 @@
   "author": "Philip Kramer (philip@onmap.co.il)",
   "license": "MIT",
   "dependencies": {
+    "archiver": "^2.1.0",
     "commander": "^2.11.0",
     "glob": "^7.1.2",
     "lodash": "4.17.4",
