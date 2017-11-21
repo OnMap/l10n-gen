@@ -1,2 +1,3 @@
-#!/usr/bin/env node
-console.log('Hello, world!');
+const zipTranslations = require('./lib/archiver');
+
+module.exports.zipTranslationsTo = zipTranslations;
