@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 
-const program = require('commander');
+const zipTranslations = require('./lib/archiver')
 
-const pckg = require('./package.json');
-const localizationFiles = require('./lib/parser/source-ios');
+const program = require('commander')
+
+const pckg = require('./package.json')
+const localizationFiles = require('./lib/parser/source-ios')
 
 
 program
@@ -19,4 +21,7 @@ program
     console.log(found)
 })
 
-program.parse(process.argv);
+program.parse(process.argv)
+
+
+module.exports.zipTranslationsTo = zipTranslations
