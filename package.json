@@ -7,7 +7,8 @@
     "l10ngen": "./index.js"
   },
   "scripts": {
-    "test": "jest --runInBand --forceExit --config ./internals/jest/jest.config.json"
+    "test": "jest --runInBand --forceExit --config ./internals/jest/jest.config.json",
+    "lint": "eslint ."
   },
   "author": "Philip Kramer (philip@onmap.co.il)",
   "license": "MIT",
@@ -20,6 +21,7 @@
     "xml2js": "0.4.19"
   },
   "devDependencies": {
+    "eslint": "^4.13.1",
     "jest-cli": "21.2.1"
   }
 }

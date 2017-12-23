@@ -2,7 +2,7 @@
   "testEnvironment": "node",
   "rootDir": "../../",
   "coverageDirectory": "coverage",
-  "collectCoverageFrom": ["lib/**"],
+  "collectCoverageFrom": ["src/**"],
   "coveragePathIgnorePatterns": ["/tests/"],
   "coverageThreshold": {
     "global": {

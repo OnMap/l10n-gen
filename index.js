@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-const zipTranslations = require('./lib/archiver')
+const zipTranslations = require('./src/archiver')
 
 const program = require('commander')
 
 const pckg = require('./package.json')
-const localizationFiles = require('./lib/parser/source-ios')
+const localizationFiles = require('./src/parser/source-ios')
 
 
 program
