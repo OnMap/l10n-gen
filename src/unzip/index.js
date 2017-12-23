@@ -14,6 +14,7 @@ const unzipTranslationsFromStream = (stream, callback) => stream
         const fileText = data.toString();
         textParser(fileText, translationsFileType)
           .then(result => callback(result))
+          /* eslint-disable no-console */
           .catch(err => console.error(err));
       });
     } else {

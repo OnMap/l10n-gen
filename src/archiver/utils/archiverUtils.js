@@ -31,6 +31,7 @@ const createArchiveInst = () => {
   archive.on('warning', (err) => {
     if (err.code === 'ENOENT') {
       // log warning
+      /* eslint-disable no-console */
       console.warn(err);
     } else {
       // throw error

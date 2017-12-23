@@ -13,11 +13,10 @@ const IOS_EXTENSION = '**/*+(.swift|.storyboard)';
 // })
 
 function localizationFiles(dir) {
-  const search = IOS_EXTENSION;
-  glob(search, (er, results) => {
-    console.log(results);
-    return results;
-  });
+  const searchLocation = dir + IOS_EXTENSION;
+  glob(searchLocation, (er, results) =>
+    results
+  );
 }
 
 module.exports = localizationFiles;

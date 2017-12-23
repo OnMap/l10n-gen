@@ -7,6 +7,7 @@ const translationsTextToMatrix = (text = '', type) => {
   switch (type) {
     case translationsFileTypes.IOS: return iosFileParser(text);
     case translationsFileTypes.ANDROID: return androidFileParser(text);
+    default: return null;
   }
 };
 

@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "jest --runInBand --forceExit --config ./internals/jest/jest.config.json",
-    "lint": "eslint . --fix"
+    "lint": "eslint ."
   },
   "author": "Philip Kramer (philip@onmap.co.il)",
   "license": "MIT",
