@@ -40,7 +40,7 @@ const {
   print,
   printAst,
   noPrint,
-  printNotChanged,
+  printNotChanged
 } = require('./get-cli-params')();
 
 const filesPath = all ? path : `./internals/transform/${folderName}/from.js`;

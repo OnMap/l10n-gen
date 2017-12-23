@@ -9,7 +9,7 @@ const translationsObject = {
   'Account.Login.EmailErrorLabel': 'Enter a valid email address',
   'Account.Login.EmailTextField': 'Email address',
   'Account.Login.ForgotButton': 'Forgot password?',
-  'Account.Login.LoginButton': 'Login',
+  'Account.Login.LoginButton': 'Login'
 };
 
 const iOSTranslations = `"Account.CancelBarButton" = "Cancel";

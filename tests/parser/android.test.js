@@ -15,7 +15,7 @@ const parsedXml = [
   ['onboarding.first.titleTV', '"פשוט לחפש בית"'],
   ['onboarding.first.onmap', '"OnMap"'],
   ['onboarding.first.descriptionTV', '"חיפוש מותאם אישית על גבי מפה חיה\\nשיעזור לך למצוא נכסים באיזור בו תבחר"'],
-  ['onboarding.third.doneBtn', 'התחל לחפש'],
+  ['onboarding.third.doneBtn', 'התחל לחפש']
 ];
 
 describe('Android text parser', () => {

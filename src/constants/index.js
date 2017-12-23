@@ -1,18 +1,18 @@
 const translationsFileTypes = {
   IOS: 'IOS',
-  ANDROID: 'ANDROID',
+  ANDROID: 'ANDROID'
 };
 
 const translationsFileNames = {
   IOS: 'Localizable.strings',
-  ANDROID: 'strings.xml',
+  ANDROID: 'strings.xml'
 };
 
 module.exports = {
   // entryTypes from 'unzip' module
   entryTypes: {
     FILE: 'File',
-    DIRECTORY: 'Directory',
+    DIRECTORY: 'Directory'
   },
 
   translationsFileTypes,
@@ -20,25 +20,25 @@ module.exports = {
 
   translationsDirectoryNames: {
     IOS: '.lproj',
-    ANDROID: 'values-',
+    ANDROID: 'values-'
   },
 
   translationFilesDescription: [
     {
       type: translationsFileTypes.IOS,
-      fileName: translationsFileNames.IOS,
+      fileName: translationsFileNames.IOS
     },
     {
       type: translationsFileTypes.ANDROID,
-      fileName: translationsFileNames.ANDROID,
-    },
+      fileName: translationsFileNames.ANDROID
+    }
   ],
 
   xmlParserOptions: {
     attrkey: 'key',
     charkey: 'value',
     explicitRoot: false,
-    trim: true,
+    trim: true
   },
 
   xmlBuilderOptions: {
@@ -50,8 +50,8 @@ module.exports = {
       rootName: 'resources',
       xmldec: {
         standalone: undefined,
-        encoding: 'utf-8',
-      },
-    },
-  },
+        encoding: 'utf-8'
+      }
+    }
+  }
 };

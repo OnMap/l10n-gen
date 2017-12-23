@@ -4,23 +4,23 @@ describe('Builder utils for Android', () => {
   const translationsObject = {
     'activity.filter.allPropertyPresentedOnTvProperties': 'הכל',
     'activity.filter.property.count.show': 'הצג',
-    'activity.filter.property.count.properties': 'נכסים',
+    'activity.filter.property.count.properties': 'נכסים'
   };
   const parsedXML = {
     string: [
       {
         _: 'הכל',
-        $: { name: 'activity.filter.allPropertyPresentedOnTvProperties' },
+        $: { name: 'activity.filter.allPropertyPresentedOnTvProperties' }
       },
       {
         _: 'הצג',
-        $: { name: 'activity.filter.property.count.show' },
+        $: { name: 'activity.filter.property.count.show' }
       },
       {
         _: 'נכסים',
-        $: { name: 'activity.filter.property.count.properties' },
-      },
-    ],
+        $: { name: 'activity.filter.property.count.properties' }
+      }
+    ]
   };
 
   const xmlString = `<?xml version="1.0" encoding="utf-8"?>

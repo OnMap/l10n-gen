@@ -14,5 +14,5 @@ const reduceAndroidTranslationsPairs = (array = []) => array
   }, []);
 
 module.exports = {
-  reduceAndroidTranslationsPairs,
+  reduceAndroidTranslationsPairs
 };

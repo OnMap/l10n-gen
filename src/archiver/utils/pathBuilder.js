@@ -1,14 +1,13 @@
 const {
   translationsFileTypes,
   translationsFileNames,
-  translationsDirectoryNames,
+  translationsDirectoryNames
 } = require('../../constants/index');
 
 const buildFilePath = (appType, language) => {
   let directory = '';
   const fileName = translationsFileNames[appType];
   const dirName = translationsDirectoryNames[appType];
-
 
   switch (appType) {
     case translationsFileTypes.IOS: {

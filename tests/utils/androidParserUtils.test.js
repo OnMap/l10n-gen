@@ -3,22 +3,22 @@ const { reduceAndroidTranslationsPairs } = require('../../src/utils/androidParse
 const parsedXml = [
   {
     value: 'הכל',
-    key: { name: 'activity.filter.allPropertyPresentedOnTvProperties' },
+    key: { name: 'activity.filter.allPropertyPresentedOnTvProperties' }
   },
   {
     value: 'הצג',
-    key: { name: 'activity.filter.property.count.show' },
+    key: { name: 'activity.filter.property.count.show' }
   },
   {
     value: 'נכסים',
-    key: { name: 'activity.filter.property.count.properties' },
-  },
+    key: { name: 'activity.filter.property.count.properties' }
+  }
 ];
 
 const parsedXmlReducedToArrayOfPairs = [
   ['activity.filter.allPropertyPresentedOnTvProperties', 'הכל'],
   ['activity.filter.property.count.show', 'הצג'],
-  ['activity.filter.property.count.properties', 'נכסים'],
+  ['activity.filter.property.count.properties', 'נכסים']
 ];
 
 describe('Android translations file text parser utils', () => {

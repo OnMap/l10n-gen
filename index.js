@@ -7,7 +7,6 @@ const program = require('commander');
 const pckg = require('./package.json');
 const localizationFiles = require('./src/parser/source-ios');
 
-
 program
   .version(pckg.version);
 
@@ -22,6 +21,5 @@ program
   });
 
 program.parse(process.argv);
-
 
 module.exports.zipTranslationsTo = zipTranslations;

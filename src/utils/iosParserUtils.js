@@ -13,5 +13,5 @@ const parseLineToPair = (line = '') => line
 
 module.exports = {
   trimTranslationItem,
-  parseLineToPair,
+  parseLineToPair
 };

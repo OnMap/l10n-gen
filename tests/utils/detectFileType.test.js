@@ -1,7 +1,6 @@
 const detectTranslationsFileType = require('../../src/utils/detectFileType');
 const { translationsFileTypes } = require('../../src/constants');
 
-
 describe('Detection file type', () => {
   it('return file type by paths', () => {
     const iOSFilePath = 'he.lproj/Localizable.strings';

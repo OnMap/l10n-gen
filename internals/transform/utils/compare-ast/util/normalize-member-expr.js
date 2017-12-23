@@ -9,6 +9,6 @@ module.exports = function (node) {
   const name = node.property.name;
   node.property = {
     type: 'Literal',
-    value: name,
+    value: name
   };
 };

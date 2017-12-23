@@ -14,5 +14,5 @@ const reduceTranslationsToStringForIOS = (translationsObject = {}) => {
 
 module.exports = {
   joinPairToLine,
-  reduceTranslationsToStringForIOS,
+  reduceTranslationsToStringForIOS
 };

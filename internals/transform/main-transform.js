@@ -26,13 +26,13 @@ module.exports = function (fileInfo, api) {
   if (print) {
     printTextDiff(fileInfo.source, source, {
       printNotChanged,
-      header: 'File diff:',
+      header: 'File diff:'
     });
     const astDiff = compareAst(fileInfo.source, source);
     if (astDiff && printAst) {
       printTextDiff(astDiff.actual, astDiff.expected, {
         printNotChanged,
-        header: 'AST diff:',
+        header: 'AST diff:'
       });
     }
   }

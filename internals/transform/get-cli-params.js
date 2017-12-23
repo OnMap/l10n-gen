@@ -62,7 +62,7 @@ const getCliParams = () => {
     print,
     printAst,
     noPrint,
-    printNotChanged,
+    printNotChanged
   };
 };
 

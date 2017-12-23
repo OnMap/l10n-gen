@@ -24,7 +24,7 @@ const fillZip = (allTranslations = {}, applicationType, archiveInst) => {
 const createArchiveInst = () => {
   const archive = archiver('zip', {
     store: true,
-    zlib: { level: 9 }, // Sets the compression level.
+    zlib: { level: 9 } // Sets the compression level.
   });
 
   // good practice to catch warnings (ie stat failures and other non-blocking errors)
@@ -48,5 +48,5 @@ const createArchiveInst = () => {
 
 module.exports = {
   createArchiveInst,
-  fillZip,
+  fillZip
 };

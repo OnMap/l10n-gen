@@ -10,5 +10,5 @@ const changeDatabaseName = (connectionString) => {
 
 module.exports = {
   changeDatabaseName,
-  MOCK_DB_PREFIX,
+  MOCK_DB_PREFIX
 };
