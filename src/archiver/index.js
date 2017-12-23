@@ -5,7 +5,7 @@ const zipTranslations = (data, appType, outputPath) => new Promise((res) => {
   const output = fs.createWriteStream(outputPath);
   const archive = createArchiveInst();
 
-  output.on('close', function() {
+  output.on('close', () => {
     res();
   });
 

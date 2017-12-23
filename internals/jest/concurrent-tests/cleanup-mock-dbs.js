@@ -32,14 +32,12 @@ const dropAllMockDbs = () => new Promise((resolve, reject) =>
               }
             });
           });
-        }))
-      ))
+        }))))
       // .then((res) => console.log('Done', res))
       // .catch(err => console.error(err))
       .then(() => db.close())
-      .then(() => resolve())
-  })
-);
+      .then(() => resolve());
+  }));
 
 dropAllMockDbs()
   .catch(err => console.error(err))

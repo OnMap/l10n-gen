@@ -22,6 +22,6 @@ const unzipTranslationsFromStream = (stream, callback) => stream
   });
 
 module.exports = {
-  unzipFromStream: unzipTranslationsFromStream
+  unzipFromStream: unzipTranslationsFromStream,
 };
 

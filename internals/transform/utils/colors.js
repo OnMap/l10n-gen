@@ -6,7 +6,7 @@ const COLORS = {
   GREEN: '\x1b[32m',
   CYAN: '\x1b[36m',
   YELLOW: '\x1b[33m',
-  MAGENTA: '\x1b[35m'
+  MAGENTA: '\x1b[35m',
 };
 
 Object.keys(COLORS).forEach((key) => {

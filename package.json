@@ -2,13 +2,14 @@
   "name": "l10ngen",
   "version": "0.0.1",
   "description": "Localization generator for iOS/Android and more",
+  "repository": "github:onmap/L1onGen",
   "main": "index.js",
   "bin": {
     "l10ngen": "./index.js"
   },
   "scripts": {
     "test": "jest --runInBand --forceExit --config ./internals/jest/jest.config.json",
-    "lint": "eslint ."
+    "lint": "eslint . --fix"
   },
   "author": "Philip Kramer (philip@onmap.co.il)",
   "license": "MIT",
@@ -22,6 +23,9 @@
   },
   "devDependencies": {
     "eslint": "^4.13.1",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
     "jest-cli": "21.2.1"
   }
 }

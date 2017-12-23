@@ -7,12 +7,12 @@ const joinPairToLine = (pair = []) => pair
 const reduceTranslationsToStringForIOS = (translationsObject = {}) => {
   const arrayOfPairs = toPairs(translationsObject);
 
-  return arrayOfPairs
+  return `${arrayOfPairs
     .map(joinPairToLine)
-    .join(';\n') + ';';
+    .join(';\n')};`;
 };
 
 module.exports = {
   joinPairToLine,
-  reduceTranslationsToStringForIOS
+  reduceTranslationsToStringForIOS,
 };

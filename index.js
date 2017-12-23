@@ -1,27 +1,27 @@
 #!/usr/bin/env node
 
-const zipTranslations = require('./src/archiver')
+const zipTranslations = require('./src/archiver');
 
-const program = require('commander')
+const program = require('commander');
 
-const pckg = require('./package.json')
-const localizationFiles = require('./src/parser/source-ios')
+const pckg = require('./package.json');
+const localizationFiles = require('./src/parser/source-ios');
 
-
-program
-.version(pckg.version)
 
 program
-.arguments('<dir>')
-.description('')
-.action(function(dir){
+  .version(pckg.version);
+
+program
+  .arguments('<dir>')
+  .description('')
+  .action((dir) => {
     // let dir2 = process.argv[3]
     // console.log(dir2)
-    let found = localizationFiles(dir)
-    console.log(found)
-})
+    const found = localizationFiles(dir);
+    console.log(found);
+  });
 
-program.parse(process.argv)
+program.parse(process.argv);
 
 
-module.exports.zipTranslationsTo = zipTranslations
+module.exports.zipTranslationsTo = zipTranslations;

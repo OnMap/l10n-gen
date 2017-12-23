@@ -9,8 +9,7 @@ describe('one', () => {
       const d = 1;
       yield c();
       console.log(a, d, omit({}));
-    })
-  );
+    }));
 
   it('1', () =>
     co(function* () {

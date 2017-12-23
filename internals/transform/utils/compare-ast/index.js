@@ -34,7 +34,7 @@ function compareAst(actualSrc, expectedSrc, options) {
 
   Array.prototype.push.apply(options.comparators, [
     fuzzyIdentifiers(options),
-    fuzzyStrings(options)
+    fuzzyStrings(options),
   ]);
 
   try {

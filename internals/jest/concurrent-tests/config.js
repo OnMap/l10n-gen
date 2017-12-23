@@ -13,9 +13,9 @@ if (isRunConcurrently(jestCommand)) {
   const mockTheVars = () => {
     jest.mock('../../../src/config', () => ({
       ...mockConfig,
-      ...mockConfigParts(mockConfig)
+      ...mockConfigParts(mockConfig),
     }));
-  }
+  };
 
   mockTheVars();
 }

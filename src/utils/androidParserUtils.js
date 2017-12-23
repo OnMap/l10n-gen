@@ -7,12 +7,12 @@ const reduceAndroidTranslationsPairs = (array = []) => array
     const value = get(item, xmlParserOptions.charkey) || '';
 
     if (key) {
-      result.push([ key, value ]);
+      result.push([key, value]);
     }
 
     return result;
   }, []);
 
 module.exports = {
-  reduceAndroidTranslationsPairs
+  reduceAndroidTranslationsPairs,
 };

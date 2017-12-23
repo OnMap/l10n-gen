@@ -1,7 +1,7 @@
 const {
   translationsFileTypes,
   translationsFileNames,
-  translationsDirectoryNames
+  translationsDirectoryNames,
 } = require('../../constants/index');
 
 const buildFilePath = (appType, language) => {

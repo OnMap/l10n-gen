@@ -12,7 +12,7 @@ function getMockConfigParts(config) {
   return {
     apiPort,
     appName,
-    connectionString
+    connectionString,
   };
 }
 

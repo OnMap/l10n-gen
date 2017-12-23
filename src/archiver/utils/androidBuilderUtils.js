@@ -2,7 +2,9 @@ const xml2js = require('xml2js');
 const { xmlBuilderOptions } = require('../../constants');
 
 const convertObjectToParsedXML = (object = {}) => {
-  const { attributeName, tagName, attrkey, charkey } = xmlBuilderOptions;
+  const {
+    attributeName, tagName, attrkey, charkey,
+  } = xmlBuilderOptions;
   const result = {};
   const body = [];
 
@@ -10,8 +12,8 @@ const convertObjectToParsedXML = (object = {}) => {
     const item = {
       [charkey]: object[key], // TODO check value with quotes
       [attrkey]: {
-        [attributeName]: key
-      }
+        [attributeName]: key,
+      },
     };
     body.push(item);
   });
@@ -32,5 +34,5 @@ const buildTranslationsXML = (translations = {}) => {
 
 module.exports = {
   convertObjectToParsedXML,
-  buildTranslationsXML
+  buildTranslationsXML,
 };

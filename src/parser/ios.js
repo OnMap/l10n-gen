@@ -6,7 +6,7 @@ const iOSTranslationsTextToMatrix = (text = '') => {
     .filter(line => (line.includes('=') && !line.startsWith('/*') && !line.endsWith('*/')))
     .map(parseLineToPair);
 
-  return Promise.resolve(translationsPairs)
+  return Promise.resolve(translationsPairs);
 };
 
 module.exports = iOSTranslationsTextToMatrix;
