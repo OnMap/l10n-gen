@@ -53,5 +53,9 @@ module.exports = {
         encoding: 'utf-8'
       }
     }
+  },
+
+  xmlStoryboardOptions: {
+    attributeName: 'userDefinedRuntimeAttribute'
   }
 };

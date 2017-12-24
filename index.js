@@ -17,7 +17,7 @@ program
     // let dir2 = process.argv[3]
     // console.log(dir2)
     const found = localizationFiles(dir);
-    console.log(found);
+    console.log('found: ' +found);
   });
 
 program.parse(process.argv);
