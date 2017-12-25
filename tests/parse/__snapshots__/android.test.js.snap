@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Android text parser parse android xml text translations to array of pairs 1`] = `
+Array [
+  Array [
+    "onboarding.first.titleTV",
+    "\\"פשוט לחפש בית\\"",
+  ],
+  Array [
+    "onboarding.first.onmap",
+    "\\"OnMap\\"",
+  ],
+  Array [
+    "onboarding.first.descriptionTV",
+    "\\"חיפוש מותאם אישית על גבי מפה חיה\\\\nשיעזור לך למצוא נכסים באיזור בו תבחר\\"",
+  ],
+  Array [
+    "onboarding.third.doneBtn",
+    "התחל לחפש",
+  ],
+]
+`;

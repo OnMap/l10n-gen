@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Android translations file text parser utils reduce parsed xml to array of pairs 1`] = `
+Array [
+  Array [
+    "activity.filter.allPropertyPresentedOnTvProperties",
+    "הכל",
+  ],
+  Array [
+    "activity.filter.property.count.show",
+    "הצג",
+  ],
+  Array [
+    "activity.filter.property.count.properties",
+    "נכסים",
+  ],
+]
+`;

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Builder utils for Android build XML string from translations object 1`] = `
+"<?xml version=\\"1.0\\" encoding=\\"utf-8\\"?>
+<resources>
+  <string name=\\"activity.filter.allPropertyPresentedOnTvProperties\\">הכל</string>
+  <string name=\\"activity.filter.property.count.show\\">הצג</string>
+  <string name=\\"activity.filter.property.count.properties\\">נכסים</string>
+</resources>"
+`;
+
+exports[`Builder utils for Android convert translations object to xmlBuilder format 1`] = `
+Object {
+  "string": Array [
+    Object {
+      "$": Object {
+        "name": "activity.filter.allPropertyPresentedOnTvProperties",
+      },
+      "_": "הכל",
+    },
+    Object {
+      "$": Object {
+        "name": "activity.filter.property.count.show",
+      },
+      "_": "הצג",
+    },
+    Object {
+      "$": Object {
+        "name": "activity.filter.property.count.properties",
+      },
+      "_": "נכסים",
+    },
+  ],
+}
+`;

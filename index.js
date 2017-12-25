@@ -5,7 +5,7 @@ const zipTranslations = require('./src/archiver');
 const program = require('commander');
 
 const pckg = require('./package.json');
-const localizationFiles = require('./src/parser/source-ios');
+const localizationiOSFiles = require('./src/parse/source-ios');
 
 program
   .version(pckg.version);
@@ -16,8 +16,8 @@ program
   .action((dir) => {
     // let dir2 = process.argv[3]
     // console.log(dir2)
-    const found = localizationFiles(dir);
-    console.log('found: ' +found);
+    const found = localizationiOSFiles(dir);
+    console.log(found);
   });
 
 program.parse(process.argv);

@@ -1,6 +1,6 @@
 const { parseLineToPair } = require('../utils/iosParserUtils');
 
-const iOSTranslationsTextToMatrix = (text = '') => {
+const stringsParse = (text = '') => {
   const translationsPairs = text
     .split('\n')
     .filter(line => (line.includes('=') && !line.startsWith('/*') && !line.endsWith('*/')))
@@ -9,4 +9,4 @@ const iOSTranslationsTextToMatrix = (text = '') => {
   return Promise.resolve(translationsPairs);
 };
 
-module.exports = iOSTranslationsTextToMatrix;
+module.exports = stringsParse;

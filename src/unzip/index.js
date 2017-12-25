@@ -1,7 +1,7 @@
 const unzip = require('unzip2');
 const { entryTypes } = require('../constants');
 const detectTranslationsFileType = require('../utils/detectFileType');
-const textParser = require('../parser');
+const textParser = require('../parse');
 
 const unzipTranslationsFromStream = (stream, callback) => stream
   .pipe(unzip.Parse())

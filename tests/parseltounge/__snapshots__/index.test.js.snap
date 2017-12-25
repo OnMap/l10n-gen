@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Update Keys pass all keys 1`] = ['testKey1', 'testKey12'];
