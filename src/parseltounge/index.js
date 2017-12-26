@@ -1,41 +1,36 @@
 import axios from 'axios';
+import get from 'lodash/get';
 
 const { parseltongueHost } = require('../constants');
 
-const uploadKeys = async (keys = [], appId = '', token = '', host = parseltongueHost.prod) => {
-//   if (!data.topic_id) {
-//     throw new BadRequestError('Topic is not defined. Check your app config');
-//   }
-  axios.defaults.headers.post['Content-Type'] = 'application/json';
-  const url = `${host}/v1/keys`;
-  console.log('url', url);
-  return new Promise((resolve, reject) =>
-    axios
-      .post(url, {
-        data: {
-          app_id: appId,
-          names: keys
-        },
-        headers: {
-          access_token: token
-        }
-      })
-      .then((response) => {
-        if (response && response.data) {
-          // logger.info(
-          //   response.data
-          // );
-          resolve(response.data);
-        } else {
-          throw new Error();
-        }
-      })
-      .catch(err =>
-        reject(new Error(err || 'Could not upload keys'))
-      )
-  );
-};
+export async function uploadKeys(
+  keys = [],
+  appId = '',
+  token = '',
+  host = parseltongueHost.prod
+) {
+  //   if (!data.topic_id) {
+  //     throw new BadRequestError('Topic is not defined. Check your app config');
+  //   }
 
-module.exports = {
-  uploadKeys
-};
+  try {
+    const response = await axios.post(`${host}/v1/keys`, {
+      app_id: appId,
+      names: keys
+    }, {
+      headers: {
+        access_token: token
+      }
+    });
+
+    if (response && response.data) {
+      // logger.info(response.data);
+      return response.data;
+    }
+
+    throw new Error('Could not upload keys');
+  } catch (err) {
+    const data = get(err, 'response.data');
+    throw new Error(data && data.message);
+  }
+}

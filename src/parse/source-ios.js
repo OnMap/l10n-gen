@@ -10,62 +10,51 @@ const extensionPattern = '**/+(*.storyboard|Localizable*.swift)';
 const storyboardKeyAttribute = '//userDefinedRuntimeAttribute';
 
 const xmlParser = new Parser();
+const swiftCaseStatementRegex = /case *.* *= *"(.*)"/g;
+
 const parseStoryboardData = (data = '') => new Promise(resolve => xmlParser
   .parseString(data, (err, result) => {
     const matches = xpath.find(result.document, storyboardKeyAttribute);
-    const keys = matches.map((match) => {
-      return match.$.value;
-    });
+    const keys = matches.map(match => match.$.value);
 
     resolve(keys);
   }));
 
-const parseSwiftData = (data = '') => new Promise((resolve) => {
-  const keys = [];
-  const regex = /case *.* *= *"(.*)"/g;
+function* getNextCase(data) {
+  let match = null;
+  do {
+    match = swiftCaseStatementRegex.exec(data);
+    if (match) {
+      yield match[1];
+    }
+  } while (match !== null);
+}
 
-  /* eslint-disable no-cond-assign */
-  let match = '';
-  while ((match = regex.exec(data)) !== null) {
-    keys.push(match[1]);
-  }
+const parseSwiftData = (data = '') => Array.from(getNextCase(data));
 
-  resolve(keys);
-});
-
-const parseStoryboardFile = async (file = '') => {
-  const data = fs.readFileSync(file, { encoding: 'utf8' });
-  return parseStoryboardData(data);
-};
-
-const parseSwiftFile = (file = '') => {
-  const data = fs.readFileSync(file, { encoding: 'utf8' });
-  return parseSwiftData(data);
-};
+const readFile = file => fs.readFileSync(file, { encoding: 'utf8' });
+const parseStoryboardFile = (file = '') => parseStoryboardData(readFile(file));
+const parseSwiftFile = (file = '') => parseSwiftData(readFile(file));
 
 const collectiOSKeys = async (files = []) => {
-  const promises = [];
-  files.forEach((file) => {
+  const parsePromises = files.map((file) => {
     switch (path.extname(file)) {
-      case '.storyboard': {
-        promises.push(parseStoryboardFile(file));
-        break;
-      }
-      case '.swift': {
-        promises.push(parseSwiftFile(file));
-        break;
-      }
+      case '.storyboard':
+        return parseStoryboardFile(file);
+
+      case '.swift':
+        return parseSwiftFile(file);
+
       default: {
         /* eslint-disable no-console */
         console.warn('Parser not found parser for', file);
-        break;
+        return null;
       }
     }
   });
 
-  return Promise.all(promises)
-    .then(data => flatten(data))
-    .catch(err => console.log('error', JSON.stringify(err, null, 4)));
+  const result = await Promise.all(parsePromises);
+  return flatten(result.filter(file => !!file));
 };
 
 const localizationiOSFiles = (dir = '.') => {

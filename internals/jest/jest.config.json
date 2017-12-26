@@ -1,7 +1,6 @@
 {
   "testEnvironment": "node",
   "rootDir": "../../",
-  "setupFiles": ["./internals/jest/jest.setup.js"],
   "coverageDirectory": "coverage",
   "collectCoverageFrom": ["src/**"],
   "coveragePathIgnorePatterns": ["/tests/"],

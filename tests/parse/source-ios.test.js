@@ -1,12 +1,12 @@
 const { collectiOSKeys, localizationiOSFiles } = require('../../src/parse/source-ios');
 
 describe('iOS source parse', () => {
-  it('find all iOS oriented files to parse', async () => {
+  it('find all iOS oriented files to parse', () => {
     const result = localizationiOSFiles('./tests/__mocks__');
     expect(result).toMatchSnapshot();
   });
 
-  it('find only iOS oriented files in folder', async () => {
+  it('find only iOS oriented files in folder', () => {
     const noResult = localizationiOSFiles('./tests/parse');
     expect(noResult).toEqual([]);
   });
