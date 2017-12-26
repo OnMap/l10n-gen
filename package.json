@@ -5,13 +5,20 @@
   "repository": "github:onmap/L1on-Gen",
   "main": "index.js",
   "bin": {
-    "l10n-gen": "./src/index.js"
+    "l10n-gen": "index.js"
   },
   "scripts": {
-    "test": "jest --forceExit --config ./internals/jest/jest.config.json",
+    "build": "yarn build:clean && backpack build",
+    "build:clean": "rm -rf build coverage",
+    "lint": "eslint .",
+    "lint:fix": "yarn lint --fix",
+    "test": "bnr test",
     "test:single": "yarn test --verbose",
-    "test:ci": "yarn test --ci --silent --colors --coverage",
-    "lint": "eslint ."
+    "test:ci": "yarn test --ci --colors --coverage --silent",
+    "playground": "yarn test:single -- playground --watch",
+    "precommit": "lint-staged",
+    "prettier:all": "prettier-eslint \"**/*.js\" --write",
+    "prettier": "prettier-eslint --write"
   },
   "author": "Philip Kramer (philip@onmap.co.il)",
   "license": "MIT",

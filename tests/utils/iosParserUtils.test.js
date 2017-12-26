@@ -13,7 +13,6 @@ describe('iOS translations file text parser utils', () => {
   it('parse text line to array', () => {
     const textLine = '"Login.InvalidEmail" = "הזן כתובת דוא״ל תקינה";';
     const parsedText = ['Login.InvalidEmail', 'הזן כתובת דוא״ל תקינה'];
-
     expect(parseLineToPair(textLine)).toEqual(parsedText);
   });
 });
