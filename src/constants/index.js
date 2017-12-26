@@ -8,18 +8,12 @@ const translationsFileNames = {
   ANDROID: 'strings.xml'
 };
 
-const parseltongueHosts = {
-  test: 'http://localhost:9000',
-  development: 'https://dev-parseltongue.onmap.co.il',
-  production: 'https://parseltongue.onmap.co.il'
-};
-
 module.exports = {
 
   parseltongueHost: {
-    test: parseltongueHosts.test,
-    dev: parseltongueHosts.development,
-    prod: parseltongueHosts.production
+    test: 'http://localhost:9000',
+    dev: 'https://dev-parseltongue.onmap.co.il',
+    prod: 'https://parseltongue.onmap.co.il'
   },
 
   // entryTypes from 'unzip' module

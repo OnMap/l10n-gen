@@ -1,11 +1,11 @@
 {
-  "name": "l10ngen",
+  "name": "l10n-gen",
   "version": "0.0.1",
   "description": "Localization generator for iOS/Android and more",
-  "repository": "github:onmap/L1onGen",
+  "repository": "github:onmap/L1on-Gen",
   "main": "index.js",
   "bin": {
-    "l10ngen": "./index.js"
+    "l10n-gen": "./src/index.js"
   },
   "scripts": {
     "test": "jest --runInBand --forceExit --config ./internals/jest/jest.config.json",
@@ -16,6 +16,7 @@
   "dependencies": {
     "archiver": "2.1.0",
     "axios": "^0.17.1",
+    "backpack-core": "0.4.3",
     "commander": "2.11.0",
     "glob": "7.1.2",
     "lodash": "4.17.4",
@@ -24,6 +25,8 @@
     "xml2js-xpath": "^0.8.0"
   },
   "devDependencies": {
+    "axios-mock-adapter": "^1.10.0",
+    "babel-eslint": "^8.0.3",
     "eslint": "^4.13.1",
     "eslint-config-airbnb": "16.1.0",
     "eslint-plugin-import": "2.8.0",
