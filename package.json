@@ -15,10 +15,10 @@
   },
   "scripts": {
     "build": "babel src -d lib",
-    "lint": "eslint .",
+    "lint": "eslint . --ignore-path .gitignore",
     "lint:fix": "yarn lint --fix",
     "prepublish": "yarn build",
-    "pretest": "yarn lint -- --cache",
+    "pretest": "yarn lint --cache",
     "test": "jest",
     "test:single": "yarn test --verbose",
     "test:ci": "yarn test --ci --colors --coverage --silent",
@@ -43,18 +43,14 @@
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-env": "^1.6.1",
     "eslint": "^4.14.0",
-    "eslint-config-airbnb": "16.1.0",
-    "eslint-plugin-import": "2.8.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.5.1",
+    "eslint-config-babel": "^7.0.2",
+    "eslint-plugin-flowtype": "^2.40.1",
+    "eslint-plugin-node": "^5.2.1",
     "jest": "^22.0.4"
   },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.js"
-    ],
-    "modulePathIgnorePatterns": [
-      "<rootDir>/test/fixtures"
     ],
     "roots": [
       "<rootDir>/src",
