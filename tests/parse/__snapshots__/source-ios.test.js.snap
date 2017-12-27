@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iOS source parse collect keys in iOS oriented files 1`] = `
+Array [
+  "Search.Map",
+  "Search.List",
+  "Search.Filters",
+  "Map.MapArea",
+  "Map.Loading",
+  "Map.NoResults",
+  "Main.SearchBar",
+  "Main.TextView",
+  "Main.TextField",
+  "Main.ChangeLanguageButton",
+  "Main.StoryboardLabel",
+  "Main.SegmentedControl",
+  "Main.TitleNavigationItem",
+]
+`;
+
+exports[`iOS source parse find all iOS oriented files to parse 1`] = `
+Array [
+  "tests/__mocks__/files/ios/source/Localizable.swift",
+  "tests/__mocks__/files/ios/source/Main.storyboard",
+]
+`;

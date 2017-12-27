@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Builder utils for iOS reduce iOS translations from object 1`] = `
+"\\"Account.CancelBarButton\\" = \\"Cancel\\";
+\\"Account.Login.EmailErrorLabel\\" = \\"Enter a valid email address\\";
+\\"Account.Login.EmailTextField\\" = \\"Email address\\";
+\\"Account.Login.ForgotButton\\" = \\"Forgot password?\\";
+\\"Account.Login.LoginButton\\" = \\"Login\\";"
+`;
+
+exports[`Builder utils for iOS reduce pair array to string for iOS 1`] = `"\\"Account.CancelBarButton\\" = \\"Cancel\\""`;

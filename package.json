@@ -1,25 +1,54 @@
 {
-  "name": "l10ngen",
+  "name": "l10n-gen",
   "version": "0.0.1",
   "description": "Localization generator for iOS/Android and more",
-  "main": "index.js",
-  "bin": {
-    "l10ngen": "./index.js"
-  },
-  "scripts": {
-    "test": "jest --runInBand --forceExit --config ./internals/jest/jest.config.json"
-  },
+  "repository": "github:onmap/L10n-Gen",
   "author": "Philip Kramer (philip@onmap.co.il)",
   "license": "MIT",
+  "main": "lib/index.js",
+  "engines": {
+    "node": ">= 4"
+  },
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "bin": {
+    "l10n-gen": "./bin/l10n-gen.js"
+  },
+  "scripts": {
+    "build": "babel src -d lib",
+    "lint": "eslint . --ignore-path .gitignore",
+    "lint:fix": "yarn lint --fix",
+    "prepar": "yarn build",
+    "pretest": "yarn lint --cache",
+    "test": "jest",
+    "test:single": "yarn test --verbose",
+    "test:ci": "yarn test --ci --colors --coverage --silent",
+    "playground": "yarn test:single -- playground --watch",
+    "precommit": "lint-staged",
+    "prettier:all": "prettier-eslint \"**/*.js\" --write",
+    "prettier": "prettier-eslint --write"
+  },
   "dependencies": {
     "archiver": "2.1.0",
-    "commander": "2.11.0",
+    "axios": "^0.17.1",
+    "commander": "^2.12.2",
     "glob": "7.1.2",
     "lodash": "4.17.4",
     "unzip2": "0.2.5",
-    "xml2js": "0.4.19"
+    "xml2js": "0.4.19",
+    "xml2js-xpath": "^0.8.0"
   },
   "devDependencies": {
-    "jest-cli": "21.2.1"
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.1.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.14.0",
+    "eslint-config-babel": "^7.0.2",
+    "eslint-plugin-flowtype": "^2.40.1",
+    "eslint-plugin-node": "^5.2.1",
+    "jest": "^22.0.4"
   }
 }
