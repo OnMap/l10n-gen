@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "description": "Localization generator for iOS/Android and more",
   "repository": "github:onmap/L1on-Gen",
+  "author": "Philip Kramer (philip@onmap.co.il)",
+  "license": "MIT",
   "main": "lib/index.js",
   "files": [
     "bin",
@@ -12,10 +14,10 @@
     "l1on-gen": "./bin/l1on-gen.js"
   },
   "scripts": {
-    "build": "backpack src -d lib",
+    "build": "babel src -d lib",
     "lint": "eslint .",
     "lint:fix": "yarn lint --fix",
-    "test": "bnr test",
+    "test": "jest",
     "test:single": "yarn test --verbose",
     "test:ci": "yarn test --ci --colors --coverage --silent",
     "playground": "yarn test:single -- playground --watch",
@@ -23,8 +25,6 @@
     "prettier:all": "prettier-eslint \"**/*.js\" --write",
     "prettier": "prettier-eslint --write"
   },
-  "author": "Philip Kramer (philip@onmap.co.il)",
-  "license": "MIT",
   "dependencies": {
     "archiver": "2.1.0",
     "axios": "^0.17.1",
@@ -36,8 +36,10 @@
     "xml2js-xpath": "^0.8.0"
   },
   "devDependencies": {
-    "axios-mock-adapter": "^1.10.0",
+    "babel-cli": "^6.26.0",
     "babel-eslint": "^8.1.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^1.6.1",
     "eslint": "^4.14.0",
     "eslint-config-airbnb": "16.1.0",
     "eslint-plugin-import": "2.8.0",

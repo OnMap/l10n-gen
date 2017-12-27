@@ -1,12 +1,26 @@
 {
-    "presets": [
-      "backpack-core/babel"
-    ],
-    "env": {
-      "test": {
-        "presets": [
-          "backpack-core/babel"
-        ]
+  "presets": [
+    ["env", {
+      "targets": {
+        "node": 4
       }
+    }]
+  ],
+  "plugins": [
+    "add-module-exports"
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        ["env", {
+          "targets": {
+            "node": "current"
+          }
+        }]
+      ],
+      "plugins": [
+        "add-module-exports"
+      ]
     }
+  }
 }
