@@ -17,6 +17,8 @@
     "build": "babel src -d lib",
     "lint": "eslint .",
     "lint:fix": "yarn lint --fix",
+    "prepublish": "yarn build",
+    "pretest": "yarn lint -- --cache",
     "test": "jest",
     "test:single": "yarn test --verbose",
     "test:ci": "yarn test --ci --colors --coverage --silent",
@@ -46,5 +48,21 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",
     "jest": "^22.0.4"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/test/fixtures"
+    ],
+    "roots": [
+      "<rootDir>/src",
+      "<rootDir>/tests"
+    ],
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/*.js"
+    ]
   }
 }
