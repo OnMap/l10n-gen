@@ -1,6 +1,6 @@
 {
   "name": "l10n-gen",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Localization generator for iOS/Android and more",
   "repository": "github:onmap/L10n-Gen",
   "author": "Philip Kramer (philip@onmap.co.il)",
