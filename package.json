@@ -3,13 +3,16 @@
   "version": "0.0.1",
   "description": "Localization generator for iOS/Android and more",
   "repository": "github:onmap/L1on-Gen",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "files": [
+    "bin",
+    "lib"
+  ],
   "bin": {
-    "l10n-gen": "bin.js"
+    "l1on-gen": "./bin/l1on-gen.js"
   },
   "scripts": {
-    "build": "yarn build:clean && backpack build",
-    "build:clean": "rm -rf build coverage",
+    "build": "backpack src -d lib",
     "lint": "eslint .",
     "lint:fix": "yarn lint --fix",
     "test": "bnr test",
@@ -25,7 +28,6 @@
   "dependencies": {
     "archiver": "2.1.0",
     "axios": "^0.17.1",
-    "backpack-core": "0.4.3",
     "commander": "^2.12.2",
     "glob": "7.1.2",
     "lodash": "4.17.4",
