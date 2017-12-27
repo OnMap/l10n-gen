@@ -1,4 +1,4 @@
-const { joinPairToLine, reduceTranslationsToStringForIOS } = require('../../src/archiver/utils/iosBuilderUtils');
+import { joinPairToLine, reduceTranslationsToStringForIOS } from '../../src/archiver/utils/iosBuilderUtils';
 
 const translationsPair = ['Account.CancelBarButton', 'Cancel'];
 const translationsObject = {

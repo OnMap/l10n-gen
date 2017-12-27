@@ -1,0 +1,8 @@
+  <?xml version="1.0" encoding="utf-8"?>
+  <resources>
+    <string name="onboarding.first.titleTV">"פשוט לחפש בית"</string>
+    <string name="onboarding.first.onmap">"OnMap"</string>
+    <string name="onboarding.first.descriptionTV">"חיפוש מותאם אישית על גבי מפה חיה\\nשיעזור לך למצוא נכסים באיזור בו תבחר"</string>
+
+    <string name="onboarding.third.doneBtn">התחל לחפש</string>
+  </resources>
