@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Update Keys handles empty response 1`] = `[Error: Could not upload keys]`;
+
+exports[`Update Keys handles error on request 1`] = `[Error: not-ok]`;
+
+exports[`Update Keys upload all keys 1`] = `"OK"`;

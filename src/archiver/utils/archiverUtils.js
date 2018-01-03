@@ -1,13 +1,13 @@
 const archiver = require('archiver');
-const { translationsFileTypes } = require('../../constants');
+const { platformType } = require('../../constants');
 const { reduceTranslationsToStringForIOS } = require('./iosBuilderUtils');
 const { buildTranslationsXML } = require('./androidBuilderUtils');
 const buildFilePath = require('./pathBuilder');
 
 const translationsToString = (translations, appType) => {
   switch (appType) {
-    case translationsFileTypes.IOS: return reduceTranslationsToStringForIOS(translations);
-    case translationsFileTypes.ANDROID: return buildTranslationsXML(translations);
+    case platformType.IOS: return reduceTranslationsToStringForIOS(translations);
+    case platformType.ANDROID: return buildTranslationsXML(translations);
     default: throw new Error('Wrong application type');
   }
 };

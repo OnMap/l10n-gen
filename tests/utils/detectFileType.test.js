@@ -1,5 +1,5 @@
 const detectTranslationsFileType = require('../../src/utils/detectFileType');
-const { translationsFileTypes } = require('../../src/constants');
+const { platformType } = require('../../src/constants');
 
 describe('Detection file type', () => {
   it('return file type by paths', () => {
@@ -7,8 +7,8 @@ describe('Detection file type', () => {
     const androidFilePath = 'values-en/strings.xml';
     const unknownFilePath = 'values-en/more_string_array.xml';
 
-    expect(detectTranslationsFileType(iOSFilePath)).toEqual(translationsFileTypes.IOS);
-    expect(detectTranslationsFileType(androidFilePath)).toEqual(translationsFileTypes.ANDROID);
+    expect(detectTranslationsFileType(iOSFilePath)).toEqual(platformType.IOS);
+    expect(detectTranslationsFileType(androidFilePath)).toEqual(platformType.ANDROID);
     expect(detectTranslationsFileType(unknownFilePath)).toEqual(null);
   });
 });

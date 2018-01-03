@@ -1,4 +1,4 @@
-const translationsFileTypes = {
+const platformType = {
   IOS: 'IOS',
   ANDROID: 'ANDROID'
 };
@@ -11,7 +11,7 @@ const translationsFileNames = {
 module.exports = {
 
   parseltongueHost: {
-    test: 'http://localhost:9000',
+    local: 'http://localhost:9000',
     dev: 'https://dev-parseltongue.onmap.co.il',
     prod: 'https://parseltongue.onmap.co.il'
   },
@@ -22,7 +22,7 @@ module.exports = {
     DIRECTORY: 'Directory'
   },
 
-  translationsFileTypes,
+  platformType,
   translationsFileNames,
 
   translationsDirectoryNames: {
@@ -32,11 +32,11 @@ module.exports = {
 
   translationFilesDescription: [
     {
-      type: translationsFileTypes.IOS,
+      type: platformType.IOS,
       fileName: translationsFileNames.IOS
     },
     {
-      type: translationsFileTypes.ANDROID,
+      type: platformType.ANDROID,
       fileName: translationsFileNames.ANDROID
     }
   ],

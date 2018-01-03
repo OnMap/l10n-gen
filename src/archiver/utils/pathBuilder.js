@@ -1,5 +1,5 @@
 const {
-  translationsFileTypes,
+  platformType,
   translationsFileNames,
   translationsDirectoryNames
 } = require('../../constants/index');
@@ -10,11 +10,11 @@ const buildFilePath = (appType, language) => {
   const dirName = translationsDirectoryNames[appType];
 
   switch (appType) {
-    case translationsFileTypes.IOS: {
+    case platformType.IOS: {
       directory = `${language}${dirName}`;
       break;
     }
-    case translationsFileTypes.ANDROID: {
+    case platformType.ANDROID: {
       directory = `${dirName}${language}`; // TODO check about he --> iw
       break;
     }

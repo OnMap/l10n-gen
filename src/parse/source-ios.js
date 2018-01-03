@@ -1,15 +1,14 @@
 
+const flatten = require('lodash/flatten');
 const glob = require('glob');
 const fs = require('fs');
 const path = require('path');
 const xpath = require('xml2js-xpath');
-const flatten = require('lodash/flatten');
 const { Parser } = require('xml2js');
+const xmlParser = new Parser();
 
 const extensionPattern = '**/+(*.storyboard|Localizable*.swift)';
 const storyboardKeyAttribute = '//userDefinedRuntimeAttribute';
-
-const xmlParser = new Parser();
 const swiftCaseStatementRegex = /case *.* *= *"(.*)"/g;
 
 const parseStoryboardData = (data = '') => new Promise(resolve => xmlParser

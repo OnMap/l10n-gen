@@ -1,8 +1,8 @@
-const { parseSourceFilesToKeys } = require('../../src/parse/index.js');
+const { sourceFilesToKeys } = require('../../src/parse/index.js');
 
 describe('iOS parse', () => {
   it('source files to keys', async () => {
-    const result = await parseSourceFilesToKeys('./tests/mocks_data', 'IOS');
+    const result = await sourceFilesToKeys('./tests/mocks_data', 'IOS');
     expect(result).toMatchSnapshot();
   });
 });
