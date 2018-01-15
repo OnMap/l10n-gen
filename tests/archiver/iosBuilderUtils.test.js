@@ -1,4 +1,7 @@
-import { joinPairToLine, reduceTranslationsToStringForIOS } from '../../src/archiver/utils/iosBuilderUtils';
+import {
+  joinPairToLine,
+  reduceTranslationsToStringForIOS
+} from '../../src/archiver/utils/iosBuilderUtils';
 
 const translationsPair = ['Account.CancelBarButton', 'Cancel'];
 const translationsObject = {
@@ -18,4 +21,3 @@ describe('Builder utils for iOS', () => {
     expect(reduceTranslationsToStringForIOS(translationsObject)).toMatchSnapshot();
   });
 });
-

@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "./node_modules/kcd-scripts/eslint.js"
+  ],
+  "rules": {
+    "camelcase": ["error", { "properties": "never" }],
+    "import/prefer-default-export": 0,
+    "one-var": [2, "never"]
+  }
+}

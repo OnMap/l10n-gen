@@ -6,13 +6,16 @@ const { collectiOSKeys, localizationiOSFiles } = require('./source-ios');
 
 const translationsTextToObject = (text = '', type) => {
   switch (type) {
-    case translationsFileTypes.IOS: return iosStringsParse(text);
-    case translationsFileTypes.ANDROID: return androidStringsParse(text);
-    default: return null;
+    case translationsFileTypes.IOS:
+      return iosStringsParse(text);
+    case translationsFileTypes.ANDROID:
+      return androidStringsParse(text);
+    default:
+      return null;
   }
 };
 
-const sourceFilesToKeys = async (dir = '', type) => {
+const sourceFilesToKeys = (dir = '', type) => {
   switch (type) {
     case translationsFileTypes.IOS: {
       const files = localizationiOSFiles(dir);
@@ -22,11 +25,12 @@ const sourceFilesToKeys = async (dir = '', type) => {
       const files = localizationiOSFiles(dir);
       return collectiOSKeys(files);
     }
-    default: return null;
+    default:
+      return null;
   }
 };
 
-const parseSourceFilesToKeys = async (dir = '', type) => sourceFilesToKeys(dir, type);
+const parseSourceFilesToKeys = (dir = '', type) => sourceFilesToKeys(dir, type);
 
 const parseTranslationsFileToObject = async (translationsText = '', type) => {
   const translationsPairs = await translationsTextToObject(translationsText, type);

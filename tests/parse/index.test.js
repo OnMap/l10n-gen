@@ -6,4 +6,3 @@ describe('iOS parse', () => {
     expect(result).toMatchSnapshot();
   });
 });
-

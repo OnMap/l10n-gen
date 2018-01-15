@@ -1,7 +1,6 @@
-
-const glob = require('glob');
 const fs = require('fs');
 const path = require('path');
+const glob = require('glob');
 const xpath = require('xml2js-xpath');
 const flatten = require('lodash/flatten');
 const { Parser } = require('xml2js');
@@ -12,13 +11,19 @@ const storyboardKeyAttribute = '//userDefinedRuntimeAttribute';
 const xmlParser = new Parser();
 const swiftCaseStatementRegex = /case *.* *= *"(.*)"/g;
 
-const parseStoryboardData = (data = '') => new Promise(resolve => xmlParser
-  .parseString(data, (err, result) => {
-    const matches = xpath.find(result.document, storyboardKeyAttribute);
-    const keys = matches.map(match => match.$.value);
+const parseStoryboardData = (data = '') =>
+  new Promise((resolve, reject) =>
+    xmlParser.parseString(data, (err, result) => {
+      if (err) {
+        return reject(err);
+      }
 
-    resolve(keys);
-  }));
+      const matches = xpath.find(result.document, storyboardKeyAttribute);
+      const keys = matches.map(match => match.$.value);
+
+      return resolve(keys);
+    })
+  );
 
 function* getNextCase(data) {
   let match = null;
@@ -37,7 +42,7 @@ const parseStoryboardFile = (file = '') => parseStoryboardData(readFile(file));
 const parseSwiftFile = (file = '') => parseSwiftData(readFile(file));
 
 const collectiOSKeys = async (files = []) => {
-  const parsePromises = files.map((file) => {
+  const parsePromises = files.map(file => {
     switch (path.extname(file)) {
       case '.storyboard':
         return parseStoryboardFile(file);

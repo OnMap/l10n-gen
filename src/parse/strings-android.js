@@ -5,11 +5,17 @@ const { reduceAndroidTranslationsPairs } = require('../utils/androidParserUtils'
 
 const xmlParser = new Parser(xmlParserOptions);
 
-const androidTranslationsTextToMatrix = (text = '') => new Promise(resolve => xmlParser
-  .parseString(text, (err, result) => {
-    const translationsArray = get(result, xmlBuilderOptions.tagName) || [];
-    const translationsPairs = reduceAndroidTranslationsPairs(translationsArray);
-    resolve(translationsPairs);
-  }));
+const androidTranslationsTextToMatrix = (text = '') =>
+  new Promise((resolve, reject) =>
+    xmlParser.parseString(text, (err, result) => {
+      if (err) {
+        return reject(err);
+      }
+      const translationsArray = get(result, xmlBuilderOptions.tagName) || [];
+      const translationsPairs = reduceAndroidTranslationsPairs(translationsArray);
+
+      return resolve(translationsPairs);
+    })
+  );
 
 module.exports = androidTranslationsTextToMatrix;

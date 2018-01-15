@@ -9,7 +9,6 @@ const translationsFileNames = {
 };
 
 module.exports = {
-
   parseltongueHost: {
     test: 'http://localhost:9000',
     dev: 'https://dev-parseltongue.onmap.co.il',

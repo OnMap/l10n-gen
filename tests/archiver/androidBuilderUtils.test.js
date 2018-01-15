@@ -1,4 +1,7 @@
-import { convertObjectToParsedXML, buildTranslationsXML } from '../../src/archiver/utils/androidBuilderUtils';
+import {
+  convertObjectToParsedXML,
+  buildTranslationsXML
+} from '../../src/archiver/utils/androidBuilderUtils';
 
 describe('Builder utils for Android', () => {
   const translationsObject = {
