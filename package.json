@@ -5,7 +5,7 @@
   "repository": "github:onmap/L10n-Gen",
   "author": "Philip Kramer (philip@onmap.co.il)",
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "engines": {
     "node": ">= 4"
   },

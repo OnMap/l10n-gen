@@ -23,7 +23,7 @@ composer.lock
 # Project Specific
 node_modules
 *.log
-lib
+dist
 tmp
 .changelog
 coverage/
