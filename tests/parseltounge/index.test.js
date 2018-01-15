@@ -18,4 +18,3 @@ describe('Update Keys', () => {
     expect(response).toBe('OK');
   });
 });
-

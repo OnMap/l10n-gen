@@ -1,6 +1,6 @@
 {
   "name": "l10n-gen",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Localization generator for iOS/Android and more",
   "repository": "github:onmap/L10n-Gen",
   "author": "Philip Kramer (philip@onmap.co.il)",
@@ -9,29 +9,31 @@
   "engines": {
     "node": ">= 4"
   },
-  "files": [
-    "bin",
-    "lib"
-  ],
+  "files": ["bin", "dist"],
   "bin": {
     "l10n-gen": "./bin/l10n-gen.js"
   },
   "scripts": {
-    "build": "babel src -d lib",
-    "lint": "eslint . --ignore-path .gitignore",
-    "lint:fix": "yarn lint --fix",
-    "prepare": "yarn build",
-    "pretest": "yarn lint --cache",
+    "build": "babel src -d dist",
+    "prepublishOnly": "yarn build",
+    "precommit": "kcd-scripts precommit",
     "test": "jest",
     "test:single": "yarn test --verbose",
     "test:ci": "yarn test --ci --colors --coverage --silent",
-    "prettier:all": "prettier-eslint \"**/*.js\" --write",
-    "prettier": "prettier-eslint --write"
+    "lint": "kcd-scripts lint",
+    "format": "kcd-scripts format"
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn format",
+      "yarn lint",
+      "git add"
+    ]
   },
   "dependencies": {
-    "archiver": "2.1.0",
+    "archiver": "^2.1.1",
     "axios": "^0.17.1",
-    "commander": "^2.12.2",
+    "commander": "^2.13.0",
     "glob": "7.1.2",
     "lodash": "4.17.4",
     "unzip2": "0.2.5",
@@ -40,13 +42,9 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-eslint": "^8.1.2",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-env": "^1.6.1",
-    "eslint": "^4.14.0",
-    "eslint-config-babel": "^7.0.2",
-    "eslint-plugin-flowtype": "^2.40.1",
-    "eslint-plugin-node": "^5.2.1",
-    "jest": "^22.0.4"
+    "jest": "^22.0.5",
+    "kcd-scripts": "^0.32.1"
   }
 }

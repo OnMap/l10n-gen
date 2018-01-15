@@ -2,13 +2,11 @@ const xml2js = require('xml2js');
 const { xmlBuilderOptions } = require('../../constants');
 
 const convertObjectToParsedXML = (object = {}) => {
-  const {
-    attributeName, tagName, attrkey, charkey
-  } = xmlBuilderOptions;
+  const { attributeName, tagName, attrkey, charkey } = xmlBuilderOptions;
   const result = {};
   const body = [];
 
-  Object.keys(object).forEach((key) => {
+  Object.keys(object).forEach(key => {
     const item = {
       [charkey]: object[key], // TODO check value with quotes
       [attrkey]: {

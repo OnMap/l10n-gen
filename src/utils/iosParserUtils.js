@@ -7,9 +7,7 @@ const trimTranslationItem = (string = '') => {
   return trimmedValue.replace(/^"(.+)"$/, '$1');
 };
 
-const parseLineToPair = (line = '') => line
-  .split('=')
-  .map(trimTranslationItem);
+const parseLineToPair = (line = '') => line.split('=').map(trimTranslationItem);
 
 module.exports = {
   trimTranslationItem,

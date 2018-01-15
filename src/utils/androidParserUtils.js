@@ -1,8 +1,8 @@
 const get = require('lodash/get');
 const { xmlParserOptions, xmlBuilderOptions } = require('../constants');
 
-const reduceAndroidTranslationsPairs = (array = []) => array
-  .reduce((result, item) => {
+const reduceAndroidTranslationsPairs = (array = []) =>
+  array.reduce((result, item) => {
     const key = get(item, `${xmlParserOptions.attrkey}.${xmlBuilderOptions.attributeName}`);
     const value = get(item, xmlParserOptions.charkey) || '';
 
